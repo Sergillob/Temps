@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Exemple_API_Ninja1_OpenWeather</title>
+
+		<script id="sap-ui-bootstrap"
+			src="../../resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"api_open_weather.Exemple_API_Ninja1_OpenWeather": "./"}'>
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--
+*******************************ATENCIO*************************************************************************
+ A https://blogs.sap.com/2016/03/22/webide-how-to-consume-3-party-services-in-ui5-app/ la manera de carregar el model 
+ és via component.js,
+ jo ho he fet amb el manifest.json, crec que és millor (mirar la web del ninja#1 si necessito fer-ho per 
+ component)
+
+A més la previsió a 16 dies només és de pagament!!!, sense pagar tens la de 5 dies
+-->
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "api_open_weather.Exemple_API_Ninja1_OpenWeather"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

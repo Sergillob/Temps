@@ -1,0 +1,81 @@
+<mvc:View controllerName="api_open_weather.Exemple_API_Ninja1_OpenWeather.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<SearchField search="onSearchEvent" width="50%"></SearchField>
+				<content>
+					<ObjectHeader iconActive="false" id="__header0" intro="{/city}" introActive="true" number="" numberUnit="" title="{/country}"
+						titleActive="true">
+						<!--
+						<attributes>
+							<ObjectAttribute text="{/coordenades}"/>
+						</attributes>
+				    -->
+					</ObjectHeader>
+					<!-- Si ho volem fer dinámicament, posem columns="{/cols}" dins de <Table>;
+					  <Table  id="__table0" columns="{/cols} items="{/items}">
+					-->
+					<Table id="__table0" items="{/items}">
+						<columns>
+							<!--Manera de fer-ho dinámicament, es a dir les columnes segons el model Dades.json
+							    Gràcies a posar columns="{/cols}" a la capçalera de <Table>
+							<Column>
+								<header>
+									<Label text="{name}"/>
+								</header>
+							</Column>
+							-->
+							<!--
+                              Ho fem així, per poder controlar la responsivness de cada columna per separat!!!	
+                              demandPopin = "true" fa que juntament amb minScreenWidth et posi a sota cada columna,
+                              si es "false" elimina la columna al fer-se petit i ja no la veus
+                              minScreenWidth determina el moment en que comença a amagarse o posar-se sota i si no ho poses
+                              aquelles columnes es veuran sempre, per exemple Date... així determinem quines son le simportants
+                              i que es veurean amb un mòbil si o si.
+							-->
+							<Column width="12em">
+								<Text text="Date"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="false">
+								<Text text="Time"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Temperature(°C)"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="false">
+								<Text text="Description"/>
+							</Column>
+							<Column>
+								<Text text="Icon"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="false">
+								<Text text="Humidity(%)"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="false">
+								<Text text="Clouds(%)"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="false">
+								<Text text="Wind(m/s)"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem counter="0" id="__item0">
+								<cells>
+									<Text text="{date}"/>
+									<Text text="{time}"/>
+									<Text text="{temp}"/>
+									<Text text="{descr}"/>
+									<Image src="{icon}"/>
+									<Text text="{humidity}"/>
+									<Text text="{clouds}"/>
+									<Text text="{wind}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

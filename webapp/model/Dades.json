@@ -1,0 +1,23 @@
+{
+	"city": "",
+	"country": "",
+	"coordenades": "",
+	"cols": [{
+		"name": "Date"
+	}, {
+		"name": "Time"
+	}, {
+		"name": "Temperature(°C)"
+	}, {
+		"name": "Description"
+	}, {
+		"name": "Icon"
+	}, {
+		"name": "Humidity(%)"
+	}, {
+		"name": "Clouds(%)"
+	}, {
+		"name": "Wind(m/s)"
+	}],
+	"items": []
+}
